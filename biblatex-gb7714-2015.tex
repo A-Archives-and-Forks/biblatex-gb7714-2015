@@ -2547,7 +2547,7 @@ entryset = {易仕和2013--,Yi2013--},
 
 然而例~\ref{eg:set:static} 这般简单的静态条目集设置，还存在两个小的问题：
 \begin{enumerate}
-  \item 中文排序会出现问题，条目集会出现在文献表末尾，这是因为条目集没有设置 language 域用于排序，而其它常规条目都会利用动态数据修改设置 language 域，但因为静态条目集需要在 biber 运行时解析，所以无法对 language 域进行处理。而使用动态条目集方法则没有这一问题，因为其解析过程直接会利用第一个子条目的排序信息。
+  \item \textbf{中文排序会出现问题，条目集会出现在文献表末尾}，这是因为条目集没有设置 language 域用于排序，而其它常规条目都会利用动态数据修改设置 language 域，但因为静态条目集需要在 biber 运行时解析，所以无法对 language 域进行处理。而使用动态条目集方法则没有这一问题，因为其解析过程直接会利用第一个子条目的排序信息。
   \item 著者-出版年制中的标注标签问题，对于静态条目集，v3.8以上版本的 biblatex 同样不复制第一个子条目信息，因此著者- 出版年制中的引用也无法生成正确的标注标签，这也就是前面动态条目集方法中提到的问题。
 \end{enumerate}
 
@@ -2610,7 +2610,7 @@ language={chinese}
 
 使用该命令后，可以引用主条目“易仕和2013--”生成双语文献。
 但要注意由于 \verb|\DeclareStyleSourcemap| 命令只能在导言区中使用，
-因此 \verb|\defdblanentry| 或 \verb|\defdoublelangentry| 命令也只能出现在导言区中，这也是相比条目集动态方法的唯一遗憾。
+因此 \verb|\defdblanentry| 或 \verb|\defdoublelangentry| 命令也\textbf{只能出现在导言区中}，这也是相比条目集动态方法的唯一遗憾。
 实现的具体细节见
 \href{https://github.com/hushidong/biblatex-solution-to-latex-bibliography}%
 {biblatex-solution-to-latex-bibliography}。
@@ -3490,7 +3490,8 @@ author.title[usera].translator.edition.location:publisher,date或year:pages[urld
 \end{texlist}
 \end{example}
 
-其中标题相关的附加信息除了可以直接在 title 域中录入外，还可以在 subtitle 或 titleaddon 域中添加，后面出现的 booktitle，journaltitle，也有类似情况，可以在 booktitleaddon 或者 journalsubtitle 中附加信息。其中出版地用 location 域表示，也可以用传统的 address 表示，biblatex将 address 作为 location 的别名处理，使用两者中的任何一个都可以表示出版地信息。\bc{特别强调: usera域不用录入，该域内容由 bbx 样式文件根据条目类型自动处理得到。}
+其中标题相关的附加信息除了可以直接在 title 域中录入外，还可以在 subtitle 或 titleaddon 域中添加，后面出现的 booktitle，journaltitle，也有类似情况，可以在 booktitleaddon 或者 journalsubtitle 中附加信息。其中出版地用 location 域表示，也可以用传统的 address 表示，biblatex将 address 作为 location 的别名处理，使用两者中的任何一个都可以表示出版地信息。
+\bc{特别强调: usera域表示文献类型标识/文献载体标识，无需用户录入，该域内容由 bbx 样式文件根据条目类型和条目信息自动处理得到。当然若用户使用 mark 和 medium 域分别表示文献类型标识、文献载体标识并录入也没有问题，biblatex会做兼容处理。}
 
 \qd{需要注意的是，当文献没有作者(责任制)，但有编者、译者时，可以利用编者和译者替代责任者，这是需要使用选项 useeditor 或 usetranslator，当前默认使用该上述选项，若不使用则可能出现标点问题。文献条目比如：}
 
@@ -3681,11 +3682,11 @@ author.title[usera].organization/instiution,date或year:pages(date/enddate/event
 其对应的 biblatex 数据域为:
 \begin{example}{报告/report/techreport条目的域格式}{eg:reportfieldfmt}
 \begin{texlist}
-author.title[usera].translator.type number.version.location:institution,date 或year:pages[urldate].url.doi
+author.title: type number[usera].translator.version.location:institution,date 或year:pages[urldate].url.doi
 \end{texlist}
 \end{example}
 
-\qd{因为有的报告文献可能存在类型和报告号信息，比如AIAA 9076或AD 730029等，所以著录格式需要有所体现，而这两个数据体现在 type 和 number 两个域中，或者在 version 域中体现也可，而对于标题中的出现的报告号，可以直接在标题或子标题或者附加标题中体现。report的版本信息放在 version 域中，而不是 book 等条目的 edition 域中。report类型出版项处理基本与 book 一样，但当出版项缺省时且存在网址时，直接省略出版项，且加上修改和更新日期，因此将其转换为 online 类型处理。从 report 开始，后面的所有类型，当不存在出版项且存在网址时，都以 online 的格式进行处理。}
+\qd{因为有的报告文献可能存在类型和报告号信息，比如AIAA 9076或AD 730029等，所以著录格式需要有所体现。这两个数据可以体现在 type 和 number 两个域中，也可以直接体现在标题 title 或子标题 subtitle 或者附加标题 titleaddon 中体现。report的版本信息放在 version 域中，而不是 book 等条目的 edition 域中。report类型出版项处理基本与 book 一样，但当出版项缺省时且存在网址时，直接省略出版项，且加上修改和更新日期，因此将其转换为 online 类型处理。从 report 开始，后面的所有类型，当不存在出版项且存在网址时，都以 online 的格式进行处理。}
 
 \subsubsection{手册或档案/manual/archive}
 \begin{refentry}{}{}
@@ -3820,6 +3821,12 @@ gb7714-2015实现了 GB/T 7714-2015 第8.6,8.7节要求的格式。
 
 gb7714-2015实现了 GB/T 7714-2015 第 8.8 节要求的析出文献相关格式。
 \end{property}
+
+
+\section{GB/T 7714-2025 标准说明与实现}\label{sec:gbt25:std}
+
+GB/T 7714-2025 标准不再进行二次解读，而是直接复现标准的文件。标准的内容详见文件：
+\href{https://github.com/hushidong/biblatex-gb7714-2015/gbT7714-2025.pdf}{gbT7714-2025.pdf}。
 
 
 \section{总结与致谢}

@@ -26,6 +26,5 @@ cd ..
 
 del /q biblatex-gb7714-2015\*.bat biblatex-gb7714-2015\*.sh *.txt *.py
 
-zip.exe -r -q -v biblatex-gb7714-2015.zip biblatex-gb7714-2015
 
 pause

@@ -11,7 +11,7 @@
 
 Maintainer: huzhenzhen <hzzmail@163.com>
 
-Homepage: <https://github.com/hushidong/biblatex-gb7714-2015>,<https://github.com/hushidong/biblatex-gb7714-2025>
+Homepage: <https://github.com/hushidong/biblatex-gb7714-2015>, <https://github.com/hushidong/biblatex-gb7714-2025>
 
 ctan-pkg: <https://www.ctan.org/pkg/biblatex-gb7714-2015>
 
@@ -20,7 +20,7 @@ License: LaTeX Project Public License 1.3c or later
 
 A biblatex implementation of the `GB/T 7714` series bibliography styles for Chinese users
 
-The biblatex-gb7714-2015 package provides an implementation of the bibliography style of the `GB/T 7714` series bibliography styles. This implementation follows `GB/T 7714` series standards, and can be used simply by loading biblatex with the appropriate option
+The biblatex-gb7714-2015 package provides an implementation of the bibliography style of the `GB/T 7714` series bibliography styles. This implementation follows `GB/T 7714` series standards, such as GB/T 7714-1987, GB/T 7714-2005, GB/T 7714-2015, GB/T 7714-2025. These styles can be used simply by loading biblatex with the appropriate option.
 
 
 biblatex-gb7714-2015 宏包是 `GB/T 7714` 系列中文参考文献著录/标注标准的 biblatex 实现。它本质上是一个样式包，在 tex 文档中配合 biblatex 宏包使用，以生成满足《GB/T 7714-2015/2025 信息与文献 参考文献著录规则》要求的参考文献。

@@ -2216,6 +2216,8 @@
             {\setunit{\subtitlepunct}\printfield{volume}}{}%
        \ifboolexpr{(test{\ifentrytype{archive}} or  test{\ifentrytype{online}}) and (not test{\iffieldundef{number}})}%判断一下archive类有没有number
             {\setunit{\subtitlepunct}\printfield{number}}{}%
+       \ifboolexpr{test{\ifentrytype{report}} and (not test{\iffieldundef{number}})}%判断一下report类有没有number
+            {\setunit{\subtitlepunct}\printfield{type}\setunit*{\addspace}\printfield{number}}{}%
        \iftoggle{bbx:gbtype}%
             {\iffieldundef{entrysubtype}{\printfield[gbtypeflag]{usera}}%在标题后直接给出文献标识字母，判断一下，是否是报纸和标准
             {\iffieldequalstr{entrysubtype}{standard}{\printfield[gbtypeflags]{usera}}%判断是否为标准
@@ -3344,10 +3346,10 @@ test{\iffieldundef{day}} and test{\iffieldundef{endday}} and test{\iffieldundef{
   \newunit\newblock
   \usebibmacro{byeditor+others}%增加的译者信息
   \newunit\newblock
-  \printfield{type}%
-  \setunit*{\addspace}%
-  \printfield{number}%
-  \newunit\newblock
+%  \printfield{type}%
+%  \setunit*{\addspace}%
+%  \printfield{number}%
+%  \newunit\newblock
   \printfield{version}%
   \newunit
   \printfield{note}%
