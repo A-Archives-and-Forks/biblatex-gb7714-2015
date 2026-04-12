@@ -1,4 +1,4 @@
-<b>Date of last change: 2025/06/10 v1.1v</b>
+<b>Date of last change: 2026/04/11 v1.1w</b>
 
 
 
@@ -20,7 +20,7 @@ License: LaTeX Project Public License 1.3c or later
 
 A biblatex implementation of the `GB/T 7714` series bibliography styles for Chinese users
 
-The biblatex-gb7714-2015 package provides an implementation of the bibliography style of the `GB/T 7714` series bibliography styles. This implementation follows `GB/T 7714` series standards, such as GB/T 7714-1987, GB/T 7714-2005, GB/T 7714-2015, GB/T 7714-2025. These styles can be used simply by loading biblatex with the appropriate option.
+The biblatex-gb7714-2015 package provides the implementation of bibliography styles for the `GB/T 7714` series standards, such as GB/T 7714-1987, GB/T 7714-2005, GB/T 7714-2015, GB/T 7714-2025. This package also provides several liberal arts bibliography styles, such as chinese-erj, chinese-css, chinese-jmw, and so on. These styles can be used simply by loading biblatex with the appropriate option.
 
 
 biblatex-gb7714-2015 宏包是 `GB/T 7714` 系列中文参考文献著录/标注标准的 biblatex 实现。它本质上是一个样式包，在 tex 文档中配合 biblatex 宏包使用，以生成满足《GB/T 7714-2015/2025 信息与文献 参考文献著录规则》要求的参考文献。
@@ -65,7 +65,6 @@ biblatex-gb7714-2015 宏包是 `GB/T 7714` 系列中文参考文献著录/标注
 * [ElegantBook](https://github.com/ElegantLaTeX/ElegantBook)
 * [ECNU-Undergraduate-LaTeX(华东师范大学本科毕业论文模板)](https://github.com/YijunYuan/ECNU-Undergraduate-LaTeX)
 * [fduthesis (复旦大学论文模板)](https://github.com/Stone-Zeng/fduthesis)
-* [fjnu-bathesis (福建师范大学本科毕业论文 LaTeX 模板)](https://github.com/fjnuer/fjnu-bathesis)
 * [GZHU_Thesis_Latex_Template（广州大学本科毕业论文 LaTeX 模板）](https://github.com/Tangent-90C/Tangent-90C-GZHU_Thesis_Latex_Template)
 * [hustthesis (华中科技大学 LaTeX 学位论文文档类)](https://github.com/hust-latex/hustthesis)
 * [LaTeX-SWUFE-Bachelor-Thesis（西南财经大学本科毕业论文 LaTeX 模板）](https://github.com/sukanka/LaTeX-SWUFE-Bachelor-Thesis)
@@ -1693,7 +1692,7 @@ please see the file 'biblatex-gb7714-2015.pdf' for further information!
 * 2025/03/03 v1.1t,ctan,github
 * 2025/05/22 v1.1u,ctan,github
 * 2025/06/10 v1.1v,ctan,github
-
+* 2026/04/11 v1.1w,ctan,github
 
 
 
